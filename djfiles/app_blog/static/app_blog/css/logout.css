@@ -1,0 +1,36 @@
+.action-block {
+    padding: 20px 0px 0px 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.action-block__action {
+
+    color: #FFCC00;
+    font-size: 30px;
+    padding: 30px;
+    border-width: 1px;
+    border-color: #FFCC00;
+    border-style: solid;
+    border-radius: 10px;
+}
+
+
+.action-block__action:hover {
+    background-color: #FFCC00;
+    color: black;
+    transform: scale(1.1);
+    border-radius: 10px;
+}
+
+
+.logout-section {
+    display: flex;
+    justify-content: center;
+}
+
+
+.logout-section__logout {
+    color: #FFCC00;
+    font-size: 30px;
+}

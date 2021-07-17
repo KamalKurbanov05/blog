@@ -1,0 +1,516 @@
+
+* {
+    box-sizing: border-box;
+}
+
+.blog-list__creation_blog {
+    color: #FFCC00;
+    font-size: 22px;
+    position: fixed;
+    right: 450px;
+    top: 20%;
+    padding: 20px;
+    border: 1px solid #FFCC00;
+    border-radius: 10px;
+    font-family: 'MullerBold';
+}
+
+
+.blog-list__creation_blog:hover {
+    background-color: #FFCC00;
+    transform: scale(1.1);
+    color: black;
+}
+
+
+.blog-list__descriptions-block {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 20px 0px 450px;
+}
+
+.blog-list__descriptions {
+    color: #FFCC00;
+    font-size: 50px;
+    margin: 0;
+}
+
+.blog-list__blog-block {
+    padding-left: 30px;
+}
+
+
+.blog-list__blog-name {
+    border-color: #FFCC00;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 700px;
+    min-height: 130px;
+    padding: 10px;
+    margin-bottom: 40px;
+}
+
+.blog-list__link {
+    color: black;
+    padding: 10px;
+    background-color: #FFCC00;
+    width: 550px;
+    border-radius: 10px;
+}
+
+
+.blog-list__exit {
+    display: flex;
+    justify-content: center;
+    color: #FFCC00;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    padding: 20px;
+    font-size: 20px;
+    font-family: 'MullerBold';
+    border-width: 1px;
+    border-style: solid;
+    border-color: #FFCC00;
+    border-radius: 10px;
+}
+
+.blog-list__exit:hover {
+    background-color: #FFCC00;
+    transform: scale(1.1);
+    color: black;
+}
+

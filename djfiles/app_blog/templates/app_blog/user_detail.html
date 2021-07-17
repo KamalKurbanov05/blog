@@ -1,0 +1,30 @@
+{% extends 'app_blog/base.html'%}
+{% block title %} user {% endblock %}
+{% block css %}
+{{block.super}}
+{% load staticfiles %}
+<link rel="stylesheet" href="{% static 'app_blog/css/user_detail.css'%}">
+{% endblock%}
+{% block content %}
+    <div class="user">
+        <div class="user__block_name">
+        </div>
+        <div class="user__block_content">
+            {% if user.profile.about_me%}
+            <div class="user__about_me_block">
+                <h2 class="user__name">Немного о себе :</h2>
+            <p class="user__about_me">{{user.profile.about_me}}</p>
+            </div>
+            {% else %}
+            <div class="user__about_me_block">
+                <h2 class="user__name">Немного о себе :</h2>
+            <p class="user__about_me"> информация отсутствует  </p>
+            </div>
+            {% endif %}
+            <h1 class="user__name"> Меня зовут {{user.profile.name}}</h1>
+            {% if user.profile.avatar_profile%}
+                <img class="user__avatar" src="..{{media}}/{{user.profile.avatar_profile.image}}">
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

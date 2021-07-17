@@ -1,0 +1,33 @@
+{% extends 'app_blog/base.html' %}
+{% block title %} Crete blog {% endblock %}
+{% block css %}
+{{ block.super }}
+{% load staticfiles  %}
+<link rel="stylesheet" href="{% static 'app_blog/css/create_blog.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="create-blog">
+    {% if request.user.is_authenticated %}
+        <div class="create-blog__block-descriptions">
+            <h1 class="create-blog__descriptions"> Создайате новсть </h1>
+            <a class="create-blog__exit" href="{% url 'logout' %}"> Выйти </a>
+        </div>
+        <div class="create-blog__input-block">
+            <form method="post" enctype="multipart/form-data" action="{% url 'create_blog' %}">
+                {% csrf_token %}
+                {{form.as_p}}
+                {{form_file.as_p}}
+                <button type="submit"> Отправить</button>
+            </form>
+            <a href="{% url 'create_blog_csv' %}" class="create-blog__link-csv"> Загрузить csv файл </a>
+        </div>
+    {% else %}
+        <div class="create-blog__block-descriptions anonymous">
+            <h3 class="create-blog__descriptions"> вы не являетесь пользователям сайта </h3>
+            <a class="create-blog__link " href="{% url 'login' %}"> войти в аккаунт </a>
+        </div>
+    {% endif %}
+
+<</div>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'app_blog/base.html' %}
+{% block title %} Blogs {% endblock %}
+{% block css %}
+{{block.super}}
+{% load staticfiles  %}
+<link rel="stylesheet" href="{% static 'app_blog/css/blog_list.css' %}">
+{% endblock %}
+{% block content %}
+<div class="blog-list">
+{% if request.user.is_authenticated %}
+    <a class="blog-list__creation_blog" href="{% url 'create_blog' %}">
+        Создать блог
+    </a>
+{% endif %}
+    <div class="blog-list__descriptions-block">
+        <h1 class="blog-list__descriptions"> Блоги </h1>
+        <a class="blog-list__exit" href="{% url 'logout' %}"> Выйти </a>
+    </div>
+    <div class="blog-list__blog-block">
+        <ul>
+            {% for blog in blog_list %}
+
+            <li class="blog-list__blog-name">
+                {% if blog.user.id %}
+                    {% if blog.user.profile.name%}
+                        <a class="blog-list__link" href="{% url 'detail_user' blog.user.id %}">Автор:
+                        {{blog.user.profile.name}}</a>
+                    {% endif %}
+                {% endif%}
+                <a class="blog-list__link" href="{% url 'blog' blog.id %}">Блог:
+                    {{blog.content|slice:':100'}}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}

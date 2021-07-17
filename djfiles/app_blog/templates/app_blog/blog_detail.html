@@ -1,0 +1,24 @@
+{% extends 'app_blog/base.html' %}
+{% block title %} Blog {% endblock%}
+{% block css %}
+{{block.super}}
+{% load staticfiles %}
+<link rel="stylesheet" href="{% static 'app_blog/css/blog_detail.css'%}">
+{% endblock %}
+{% block content %}
+    <div class="blog">
+        <div class="blog__block_title">
+            <h1 class="blog__title">{{blog.title}}</h1>
+        </div>
+        <div class="blog__block_content">
+            <p class="blog__content">{{blog.content}}</p>
+            <div class="blog__image_block">
+                {% for img in blog.blog_file.all %}
+                <a href="{% url 'image' img.id %}" class="blog__link_image">
+                    <img class="blog__img" src="{{img.image.url}}" alt="img">
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

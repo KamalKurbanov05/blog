@@ -1,0 +1,17 @@
+{% extends 'app_blog/base.html' %}
+{% block title %} Logout {% endblock %}
+{% block css %}
+{{block.super}}
+{% load staticfiles%}
+<link rel="stylesheet" href="{% static 'app_blog/css/logout.css'%}">
+{%endblock%}
+{% block content %}
+    <div class="action-block">
+        <a href="{% url 'login' %}" class="action-block__action"> Войти </a>
+        <a href="{% url 'blog' %}" class="action-block__action"> читать блог </a>
+    </div>
+    <div class="logout-section">
+        <h2 class="logout-section__logout"> вы успешно покинули свой аккаунт </h2>
+    </div>
+
+{% endblock%}

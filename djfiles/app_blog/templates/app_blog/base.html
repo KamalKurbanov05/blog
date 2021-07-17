@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title%}{% endblock %}</title>
+    {% block css %}
+        <link rel="stylesheet" href="{% static 'app_blog/css/base.css' %}">
+        <link rel="stylesheet" href="{% static 'app_blog/css/fonts.css' %}">
+    {% endblock %}
+</head>
+<body>
+    <style>
+        {% block style %}
+        {% endblock %}
+    </style>
+    <div class="container">
+        {% block content %}
+            <div class="choices_list">
+                <ul class="choices_list__block">
+                   <li>
+                       <a class="choices_list__blog" href="{% url 'blog' %}">
+                           Читать блоги
+                       </a>
+                   </li>
+                   {% if request.user.is_authenticated %}
+                        <li>
+                           <a class="choices_list__blog" href="{% url 'create_blog' %}">
+                               Создать блог
+                           </a>
+
+                        </li>
+                        <li>
+                           <a class="choices_list__blog" href="{% url 'logout' %}">
+                               Выйти
+                           </a>
+
+                        </li>
+                   {% else %}
+                        <li>
+                           <a class="choices_list__blog" href="{% url 'login' %}">
+                               Войти
+                           </a>
+                        </li>
+                        <li>
+                           <a class="choices_list__blog" href="{% url 'registrations' %}">
+                               Зарегестрироваться
+                           </a>
+                        </li>
+                    {% endif %}
+            </ul>
+
+            </div>
+        {% endblock %}
+    </div>
+</body>
+</html>

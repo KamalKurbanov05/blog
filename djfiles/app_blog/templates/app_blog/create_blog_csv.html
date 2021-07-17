@@ -1,0 +1,18 @@
+{% extends 'app_blog/base.html' %}
+{% block title %} Csv {% endblock %}
+{% block css %}
+{{ block.super }}
+{% load staticfiles %}
+<link rel="stylesheet" href="{% static 'app_blog/css/create_blog_csv.css'%}">
+{% endblock %}
+{% block content %}
+    <div class="csv_block">
+        <form  method="post" action="{% url 'create_blog_csv' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">
+            Отправить
+        </button>
+    </form>
+    </div>
+{% endblock %}

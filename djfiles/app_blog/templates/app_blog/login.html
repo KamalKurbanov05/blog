@@ -1,0 +1,31 @@
+{% extends 'app_blog/base.html' %}
+{% block title %} Авторизация {% endblock %}
+{% block css %}
+{{block.super}}
+{% load staticfiles  %}
+<link rel="stylesheet" href="{% static 'app_blog/css/login.css' %}">
+{% endblock %}
+{% block content %}
+<div class="login">
+    <h1 class="login__descriptions"> Войти </h1>
+    {% if form.errors %}
+        <div  class="login__input-block">
+            <h2 class="login__error_msg"> Повторите попытку или зарегистрируйтесь </h2>
+            <a class="login__link_registrations" href="{% url 'registrations' %}" > регистрация пользователя </a>
+            <form method="post" action="{% url 'login' %}">
+                {% csrf_token%}
+                {{ form.as_p}}
+                <button type="submit"> Отрправить </button>
+            </form>
+        </div>
+    {% else %}
+        <div  class="login__input-block">
+            <form method="post" action="{% url 'login' %}">
+                {% csrf_token%}
+                {{ form.as_p}}
+                <button type="submit"> Отрправить </button>
+            </form>
+        </div>
+    {% endif %}
+</div>
+{% endblock%}

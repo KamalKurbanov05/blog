@@ -1,0 +1,17 @@
+.image-block {
+    position: absolute;
+}
+
+.image-block__image {
+    border-radius: 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #FFCC00;
+    position: relative;
+    top: 230px;
+    left: 380px;
+    line-height: 0px;
+    width: 800px;
+    height: 700px;
+    object-fit: contain;
+}

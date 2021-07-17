@@ -1,0 +1,21 @@
+{% extends 'app_blog/base.html' %}
+{% block title %} Регистрация {% endblock %}
+{% block css %}
+{{ block.super }}
+{% load staticfiles  %}
+<link rel="stylesheet" href="{% static 'app_blog/css/registrations.css' %}">
+{% endblock %}
+{% block content %}
+<div class="registrations">
+    <h1 class="registrations__descriptions"> Регистрация </h1>
+    <h6>{{error_msg}}</h6>
+    <div class="registrations__block">
+        <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit"> Отрправить </button>
+    </form>
+
+    </div>
+</div>
+{% endblock%}
